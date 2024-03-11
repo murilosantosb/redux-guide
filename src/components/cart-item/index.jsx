@@ -1,7 +1,7 @@
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 
 // Styles
-import * as Styles from "./cart-item.styles";
+import * as Styles from "../cart-item/styles";
 
 const CartItem = ({ product }) => {
   const handleRemoveClick = () => {};
@@ -24,7 +24,7 @@ const CartItem = ({ product }) => {
             onClick={handleDecreaseClick}
             aria-label={`Decrease quantity of ${product.name}`}
           />
-          <p>{product.quantity}</p>
+          <p>{product.quantify}</p>
           <AiOutlinePlus
             size={20}
             onClick={handleIncreaseClick}
