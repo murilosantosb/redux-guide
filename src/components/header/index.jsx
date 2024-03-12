@@ -34,7 +34,7 @@ function Header() {
   const handleLogoutClick = () => {
     dispatch(logoutUser(null))
   }
-
+  
   return (
     <Styles.Container>
       <Styles.Logo>Redux Shopping</Styles.Logo>

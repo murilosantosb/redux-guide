@@ -30,6 +30,32 @@ const cartReducer = (state = initialState, action) => {
                 ...state,
                 products: [...state.products, { ...action.payload , quantify: 1}]
             }
+
+            case CartActionTypes.REMOVE_PRODUCT:
+                return {
+                    ...state,
+                    products: state.products.filter(product => product.id === action.payload)
+                };
+
+            case CartActionTypes.INCLEMENT_PRODUCT:
+                return {
+                    ...state,
+                    products: state.products.map((product) => 
+                        product.id === action.payload
+                         ? {...product, quantify: product.quantify + 1}
+                         : product
+                        ),
+                };
+                
+            case CartActionTypes.DECLEMENT_PRODUCT :
+                return {
+                    ...state ,
+                    products: state.products.map((product) =>
+                    product.id === action.payload
+                    ? {...product, quantify: product.quantify -1}
+                    : product = null
+                    ),
+                } ;   
         default:
             return state;    
     }
